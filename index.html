@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2CTS - Sistema di Cifratura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>T2CTS - Sistema di Cifratura</h1>
+    <div id="passwordPrompt">
+        <input type="password" id="passwordInput" placeholder="Inserisci la password">
+        <button onclick="checkPassword()">Accedi</button>
+    </div>
+    <div id="cipherArea" style="display:none;">
+        <textarea id="inputText" rows="5" cols="40" placeholder="Inserisci il testo"></textarea><br>
+        <button onclick="encryptText()">Cifra</button>
+        <button onclick="decryptText()">Decifra</button>
+        <div id="result">Risultato: </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        const correctPassword = "non_lo.s4neSSun0";
+
+        function checkPassword() {
+            const inputPassword = document.getElementById("passwordInput").value;
+            if (inputPassword === correctPassword) {
+                document.getElementById("passwordPrompt").style.display = "none";
+                document.getElementById("cipherArea").style.display = "block";
+            } else {
+                alert("Password incorretta!");
+            }
+        }
+    </script>
+</body>
+</html>
