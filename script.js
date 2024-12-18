@@ -1,4 +1,3 @@
-// Tabelle di conversione
 const substitutionTable = {
     'A': '#', 'B': ';', 'C': "'", 'D': '_', 'E': '3', 'F': '&', 'G': '-', 
     'H': '+', 'I': '8', 'L': '/', 'M': '?', 'N': '!', 'O': '9', 'P': '0', 
@@ -18,7 +17,6 @@ const reverseAsciiTable = Object.fromEntries(
     Object.entries(asciiTable).map(([key, value]) => [value, key])
 );
 
-// Funzione per cifrare
 function encryptText() {
     const input = document.getElementById("inputText").value.toUpperCase();
     const substituted = input.split('').map(char => substitutionTable[char] || char).join('');
@@ -27,7 +25,6 @@ function encryptText() {
     document.getElementById("result").innerText = `Risultato: ${encrypted}`;
 }
 
-// Funzione per decifrare
 function decryptText() {
     const input = document.getElementById("inputText").value;
     const asciiValues = input.split('').map(char => reverseAsciiTable[char] || char).join('');
