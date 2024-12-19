@@ -22,23 +22,28 @@
     </style>
 </head>
 <body>
-    <h1>T2CTS - Try To Convert This Shit</h1>
-    <h2>The safest unsafest cypher there is</h2>
+    <h1>T2CTS - Try To Comvert This Shit</h1>
+    <h2>The safest unsafest cypher</h2>
     <div id="passwordPrompt">
-        <input type="password" id="passwordInput" placeholder="password">
+        <input type="password" id="passwordInput" placeholder="Inserisci la password">
         <button onclick="checkPassword()">Accedi</button>
     </div>
     <div id="cipherArea" style="display:none;">
-        <textarea id="inputText" rows="5" cols="40" placeholder="Insert any text"></textarea><br>
-        <button onclick="encryptText()">Cypher</button>
-        <button onclick="decryptText()">Deypher</button>
-        <div id="result">Risultato: </div>
+        <label for="keyInput">Chiave:</label>
+    <input type="text" id="keyInput" placeholder="Inserisci la chiave"><br><br>
+
+    <label for="plainText">Testo:</label>
+    <textarea id="plainText" placeholder="Inserisci il testo"></textarea><br><br>
+
+    <button id="cypher">Cifra</button>
+    <button id="decryptButton">Decifra</button>
+    <div id="result"></div>
     </div>
 
     <script src="script.js"></script>
 
     <script>
-        const correctPassword = "rieteyeytptutwot";
+        const correctPassword = "non_lo.s4neSSun0";
 
         function checkPassword() {
             const inputPassword = document.getElementById("passwordInput").value;
