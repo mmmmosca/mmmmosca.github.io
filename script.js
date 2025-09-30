@@ -40,7 +40,7 @@ function decryptWithKey(text, baseTable, key) {
 // Eventi del sito
 document.getElementById('cypher').addEventListener('click', function() {
     const key = document.getElementById('keyInput').value;
-    const plainText = document.getElementById('plainText').value;
+    const plainText = document.getElementById('plainText').value.toUpperCase();
     const encryptedText = encryptWithKey(plainText, baseSubstitutionTable, key);
     document.getElementById('result').textContent = `${encryptedText}`;});
 
